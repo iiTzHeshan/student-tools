@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Free Word Counter for Students</title>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial; padding: 20px;">
+
+  <h1>Free Word Counter Tool</h1>
+  <p>Paste your assignment text below to count words and characters.</p>
+
+  <textarea id="text" rows="10" cols="80" placeholder="Paste your text here..."></textarea>
+
+  <br><br>
+  <button onclick="countWords()">Count</button>
+
+  <p id="result"></p>
+
+  <script>
+    function countWords() {
+      let text = document.getElementById("text").value;
+      let words = text.trim().split(/\s+/).filter(w => w.length > 0);
+      let characters = text.length;
+      document.getElementById("result").innerHTML =
+        "Words: " + words.length + "<br>Characters: " + characters;
+    }
+  </script>
+
+</body>
+</html>
